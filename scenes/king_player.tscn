@@ -88,13 +88,14 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_yjj0d"]
-radius = 7.0
+radius = 5.0
 
 [node name="king_player" type="CharacterBody2D" unique_id=40363763]
+position = Vector2(-3, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1714365326]
-position = Vector2(7, -5)
-scale = Vector2(0.88461536, 0.87931037)
+position = Vector2(4, -2.0000002)
+scale = Vector2(0.5320513, 0.5258621)
 sprite_frames = SubResource("SpriteFrames_xiplf")
 autoplay = "default"
 frame_progress = 0.78092086

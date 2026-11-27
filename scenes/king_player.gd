@@ -2,6 +2,8 @@
 extends CharacterBody2D
 
 @onready var playeranimation: AnimatedSprite2D = $AnimatedSprite2D
+@onready var timer: Timer = $Timer
+
 
 @export var speed = 100
 var v2 = Vector2.ZERO
@@ -28,18 +30,11 @@ func _physics_process(delta):
 
 	velocity = v2.normalized() * speed
 	move_and_slide()
-	
-	if v2 != Vector2.ZERO:
-		if playeranimation.animation != "run":
-			playeranimation.play("run")
-		if Input.is_action_just_pressed("shot"):
-				playeranimation.play("attack")
-		
-	else:
-		if playeranimation.animation != "idle":
-			playeranimation.play("idle")
-		if Input.is_action_just_pressed("shot"):
-			playeranimation.play("attack")
+	if Input.is_action_just_pressed("shot"):
+		playeranimation.play("attack")
+		timer.start()
+
+
 	
 var is_dead = false
 func die():
@@ -47,3 +42,12 @@ func die():
 		return
 	is_dead = true
 	playeranimation.play("dead")
+
+
+func _on_timer_timeout() -> void:
+	if v2 != Vector2.ZERO:
+		if playeranimation.animation != "run":
+			playeranimation.play("run")
+	else:
+		if playeranimation.animation != "idle":
+			playeranimation.play("idle")

@@ -608,8 +608,61 @@ script = ExtResource("4_lbhrr")
 
 [node name="Camera2D" type="Camera2D" parent="king_player" unique_id=1153547494]
 zoom = Vector2(4, 4)
+position_smoothing_enabled = true
 
-[node name="Label" type="Label" parent="." unique_id=893494998]
+[node name="bombs" type="Node" parent="." unique_id=2023391200]
+
+[node name="bomb" parent="bombs" unique_id=1282091265 instance=ExtResource("5_iywne")]
+position = Vector2(440, 122)
+
+[node name="bomb3" parent="bombs" unique_id=341452489 instance=ExtResource("5_iywne")]
+position = Vector2(507, 97)
+
+[node name="bomb4" parent="bombs" unique_id=886880396 instance=ExtResource("5_iywne")]
+position = Vector2(427, 71)
+
+[node name="bomb5" parent="bombs" unique_id=134303576 instance=ExtResource("5_iywne")]
+position = Vector2(399, 112)
+
+[node name="bomb6" parent="bombs" unique_id=1137298950 instance=ExtResource("5_iywne")]
+position = Vector2(420, 105)
+
+[node name="bomb7" parent="bombs" unique_id=462806313 instance=ExtResource("5_iywne")]
+position = Vector2(462, 115)
+
+[node name="bomb8" parent="bombs" unique_id=1553260390 instance=ExtResource("5_iywne")]
+position = Vector2(449, 82)
+
+[node name="bomb10" parent="bombs" unique_id=1389668077 instance=ExtResource("5_iywne")]
+position = Vector2(484, 107)
+
+[node name="bomb11" parent="bombs" unique_id=734241799 instance=ExtResource("5_iywne")]
+position = Vector2(404, 76)
+
+[node name="bomb2" parent="bombs" unique_id=1047542038 instance=ExtResource("5_iywne")]
+position = Vector2(473, 72)
+
+[node name="bomb9" parent="bombs" unique_id=344334162 instance=ExtResource("5_iywne")]
+position = Vector2(492, 57)
+
+[node name="bomb12" parent="bombs" unique_id=89254874 instance=ExtResource("5_iywne")]
+position = Vector2(468, 140)
+
+[node name="bomb13" parent="bombs" unique_id=799420170 instance=ExtResource("5_iywne")]
+position = Vector2(427, 146)
+
+[node name="bomb14" parent="bombs" unique_id=1810647617 instance=ExtResource("5_iywne")]
+position = Vector2(496, 122)
+
+[node name="bomb15" parent="bombs" unique_id=2138489187 instance=ExtResource("5_iywne")]
+position = Vector2(443, 55)
+
+[node name="bomb16" parent="bombs" unique_id=1792541868 instance=ExtResource("5_iywne")]
+position = Vector2(469, 41)
+
+[node name="lables" type="Node" parent="." unique_id=441563477]
+
+[node name="Label" type="Label" parent="lables" unique_id=893494998]
 offset_left = -3.0
 offset_top = -31.0
 offset_right = 103.0
@@ -620,42 +673,13 @@ text = "A, D, W, S and  Arrows
 for move"
 horizontal_alignment = 1
 
-[node name="bombs" type="Node" parent="." unique_id=2023391200]
-
-[node name="bomb" parent="bombs" unique_id=1282091265 instance=ExtResource("5_iywne")]
-position = Vector2(445, 126)
-
-[node name="bomb2" parent="bombs" unique_id=1511374270 instance=ExtResource("5_iywne")]
-position = Vector2(461, 81)
-
-[node name="bomb3" parent="bombs" unique_id=341452489 instance=ExtResource("5_iywne")]
-position = Vector2(506, 94)
-
-[node name="bomb4" parent="bombs" unique_id=886880396 instance=ExtResource("5_iywne")]
-position = Vector2(436, 61)
-
-[node name="bomb5" parent="bombs" unique_id=134303576 instance=ExtResource("5_iywne")]
-position = Vector2(474, 136)
-
-[node name="bomb6" parent="bombs" unique_id=1137298950 instance=ExtResource("5_iywne")]
-position = Vector2(421, 108)
-
-[node name="bomb7" parent="bombs" unique_id=462806313 instance=ExtResource("5_iywne")]
-position = Vector2(469, 108)
-
-[node name="bomb8" parent="bombs" unique_id=1553260390 instance=ExtResource("5_iywne")]
-position = Vector2(487, 58)
-
-[node name="bomb9" parent="bombs" unique_id=822617836 instance=ExtResource("5_iywne")]
-position = Vector2(435, 86)
-
-[node name="bomb10" parent="bombs" unique_id=1389668077 instance=ExtResource("5_iywne")]
-position = Vector2(483, 97)
-
-[node name="bomb11" parent="bombs" unique_id=734241799 instance=ExtResource("5_iywne")]
-position = Vector2(511, 70)
-
-[node name="bomb12" parent="bombs" unique_id=237874759 instance=ExtResource("5_iywne")]
-position = Vector2(500, 122)
+[node name="Label2" type="Label" parent="lables" unique_id=1872352895]
+offset_left = 109.0
+offset_top = 38.0
+offset_right = 368.0
+offset_bottom = 65.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 19
+text = "DO NOT TOUCH THE BOMBS"
 
 [connection signal="input_event" from="king_player" to="king_player" method="_on_input_event"]

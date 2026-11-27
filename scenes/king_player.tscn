@@ -1,8 +1,21 @@
 [gd_scene format=3 uid="uid://ctamoifctqsvm"]
 
+[ext_resource type="Texture2D" uid="uid://dx8wthq4226wg" path="res://assets/Kings and Pigs/Sprites/01-King Human/Attack (78x58).png" id="1_6m3ub"]
 [ext_resource type="Texture2D" uid="uid://bfejb6v73kryy" path="res://assets/Kings and Pigs/Sprites/01-King Human/Dead (78x58).png" id="1_g7dws"]
 [ext_resource type="Texture2D" uid="uid://d116xmjnpw5ox" path="res://assets/Kings and Pigs/Sprites/01-King Human/Idle (78x58).png" id="1_slwwy"]
 [ext_resource type="Texture2D" uid="uid://vkuy63g03ns5" path="res://assets/Kings and Pigs/Sprites/01-King Human/Run (78x58).png" id="2_vo2ox"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ngahm"]
+atlas = ExtResource("1_6m3ub")
+region = Rect2(0, 0, 78, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cd6a5"]
+atlas = ExtResource("1_6m3ub")
+region = Rect2(78, 0, 78, 58)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n3u7y"]
+atlas = ExtResource("1_6m3ub")
+region = Rect2(156, 0, 78, 58)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pk7vw"]
 atlas = ExtResource("1_g7dws")
@@ -100,6 +113,20 @@ region = Rect2(546, 0, 78, 58)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ngahm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cd6a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n3u7y")
+}],
+"loop": 0,
+"name": &"attack",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_pk7vw")
 }, {
 "duration": 1.0,
@@ -186,17 +213,18 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g7dws"]
 size = Vector2(12, 12)
 
-[node name="king_player" type="CharacterBody2D" unique_id=40363763]
+[node name="king_player" type="CharacterBody2D" unique_id=40363763 groups=["player"]]
 position = Vector2(-3, 1)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1714365326]
 position = Vector2(6.000001, 1)
 scale = Vector2(0.53685904, 0.5258621)
 sprite_frames = SubResource("SpriteFrames_xiplf")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
+frame = 2
+frame_progress = 1.0
 offset = Vector2(-18.510443, -3.803278)
-flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=369692609]
 position = Vector2(-4, 0)

@@ -24,16 +24,23 @@ func _physics_process(delta):
 	elif Input.is_action_pressed("right"):
 		v2.x = speed
 		playeranimation.flip_h = false
+		
+
 	velocity = v2.normalized() * speed
 	move_and_slide()
-
+	
 	if v2 != Vector2.ZERO:
 		if playeranimation.animation != "run":
 			playeranimation.play("run")
+		if Input.is_action_just_pressed("shot"):
+				playeranimation.play("attack")
+		
 	else:
 		if playeranimation.animation != "idle":
 			playeranimation.play("idle")
-			
+		if Input.is_action_just_pressed("shot"):
+			playeranimation.play("attack")
+	
 var is_dead = false
 func die():
 	if is_dead:

@@ -8,6 +8,8 @@ var v2 = Vector2.ZERO
 
 
 func _physics_process(delta):
+	if is_dead:
+		return
 	v2 = Vector2.ZERO
 
 	if Input.is_action_pressed("up"):
@@ -31,3 +33,10 @@ func _physics_process(delta):
 	else:
 		if playeranimation.animation != "idle":
 			playeranimation.play("idle")
+			
+var is_dead = false
+func die():
+	if is_dead:
+		return
+	is_dead = true
+	playeranimation.play("dead")

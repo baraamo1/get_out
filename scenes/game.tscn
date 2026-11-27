@@ -592,9 +592,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 sources/1 = SubResource("TileSetAtlasSource_iywne")
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_lrn7f"]
-radius = 6.0
-
 [node name="game" type="Node2D" unique_id=1105649560]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=9833519]
@@ -623,10 +620,42 @@ text = "A, D, W, S and  Arrows
 for move"
 horizontal_alignment = 1
 
-[node name="bomb" parent="." unique_id=1282091265 instance=ExtResource("5_iywne")]
-position = Vector2(65, 97)
+[node name="bombs" type="Node" parent="." unique_id=2023391200]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb" unique_id=238021804]
-shape = SubResource("CircleShape2D_lrn7f")
+[node name="bomb" parent="bombs" unique_id=1282091265 instance=ExtResource("5_iywne")]
+position = Vector2(445, 126)
+
+[node name="bomb2" parent="bombs" unique_id=1511374270 instance=ExtResource("5_iywne")]
+position = Vector2(461, 81)
+
+[node name="bomb3" parent="bombs" unique_id=341452489 instance=ExtResource("5_iywne")]
+position = Vector2(506, 94)
+
+[node name="bomb4" parent="bombs" unique_id=886880396 instance=ExtResource("5_iywne")]
+position = Vector2(436, 61)
+
+[node name="bomb5" parent="bombs" unique_id=134303576 instance=ExtResource("5_iywne")]
+position = Vector2(474, 136)
+
+[node name="bomb6" parent="bombs" unique_id=1137298950 instance=ExtResource("5_iywne")]
+position = Vector2(421, 108)
+
+[node name="bomb7" parent="bombs" unique_id=462806313 instance=ExtResource("5_iywne")]
+position = Vector2(469, 108)
+
+[node name="bomb8" parent="bombs" unique_id=1553260390 instance=ExtResource("5_iywne")]
+position = Vector2(487, 58)
+
+[node name="bomb9" parent="bombs" unique_id=822617836 instance=ExtResource("5_iywne")]
+position = Vector2(435, 86)
+
+[node name="bomb10" parent="bombs" unique_id=1389668077 instance=ExtResource("5_iywne")]
+position = Vector2(483, 97)
+
+[node name="bomb11" parent="bombs" unique_id=734241799 instance=ExtResource("5_iywne")]
+position = Vector2(511, 70)
+
+[node name="bomb12" parent="bombs" unique_id=237874759 instance=ExtResource("5_iywne")]
+position = Vector2(500, 122)
 
 [connection signal="input_event" from="king_player" to="king_player" method="_on_input_event"]

@@ -7,6 +7,8 @@ extends Area2D
 
 func _on_body_entered(body: Node2D) -> void:
 	animated_sprite_2d.play("boom")
+	if body is CharacterBody2D:
+		body.die()
 	timer.start()
 	
 

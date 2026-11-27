@@ -4,6 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dojfnkkr1fwjy" path="res://assets/Kings and Pigs/Sprites/14-TileSets/Decorations (32x32).png" id="2_lnu2h"]
 [ext_resource type="PackedScene" uid="uid://ctamoifctqsvm" path="res://scenes/king_player.tscn" id="3_lnu2h"]
 [ext_resource type="Script" uid="uid://dibbamu4qhpuy" path="res://scenes/king_player.gd" id="4_lbhrr"]
+[ext_resource type="PackedScene" uid="uid://qobmyuep44w" path="res://scenes/bomb.tscn" id="5_iywne"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lbhrr"]
 texture = ExtResource("1_yqjtg")
@@ -591,6 +592,9 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_lbhrr")
 sources/1 = SubResource("TileSetAtlasSource_iywne")
 
+[sub_resource type="CircleShape2D" id="CircleShape2D_lrn7f"]
+radius = 6.0
+
 [node name="game" type="Node2D" unique_id=1105649560]
 
 [node name="TileMap" type="TileMap" parent="." unique_id=9833519]
@@ -618,5 +622,11 @@ theme_override_font_sizes/font_size = 10
 text = "A, D, W, S and  Arrows
 for move"
 horizontal_alignment = 1
+
+[node name="bomb" parent="." unique_id=1282091265 instance=ExtResource("5_iywne")]
+position = Vector2(65, 97)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bomb" unique_id=238021804]
+shape = SubResource("CircleShape2D_lrn7f")
 
 [connection signal="input_event" from="king_player" to="king_player" method="_on_input_event"]

@@ -37,11 +37,15 @@ func _physics_process(delta):
 		
 		if targer is CharacterBody2D:
 			king_player.die()
-			animated_sprite_2d.play("attack")
+			attack()
 
 	if ray_cast_2d_2.is_colliding():
 		var targer = ray_cast_2d_2.get_collider()
 		
 		if targer is CharacterBody2D:
 			king_player.die()
-			animated_sprite_2d.play("attack")
+			attack()
+func attack():
+	animated_pig.play("attack")
+	ray_cast_2d_2.queue_free()
+	ray_cast_2d.queue_free()

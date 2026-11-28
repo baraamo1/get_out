@@ -56,6 +56,7 @@ func die():
 		return
 	is_dead = true
 	playeranimation.play("dead")
+
 	timer.start()
 
 

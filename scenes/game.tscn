@@ -694,7 +694,7 @@ position = Vector2(960, -62)
 position = Vector2(965, 89)
 
 [node name="the_pig2" parent="." unique_id=541505524 instance=ExtResource("6_p57ef")]
-position = Vector2(928, 61)
+position = Vector2(183, 92)
 
 [connection signal="input_event" from="king_player" to="king_player" method="_on_input_event"]
 [connection signal="timeout" from="king_player/Timer" to="king_player" method="_on_timer_timeout"]

@@ -5,6 +5,8 @@ extends CharacterBody2D
 @onready var timer: Timer = $Timer
 
 
+
+
 @export var speed = 100
 var v2 = Vector2.ZERO
 
@@ -46,7 +48,6 @@ func _physics_process(delta):
 	if v2 == Vector2.ZERO and playeranimation.animation != "attack":
 		if playeranimation.animation != "idle":
 			playeranimation.play("idle")
-			
 
 
 var is_dead = false
@@ -55,3 +56,9 @@ func die():
 		return
 	is_dead = true
 	playeranimation.play("dead")
+	timer.start()
+
+
+
+func _on_timer_timeout() -> void:
+	get_tree().reload_current_scene()

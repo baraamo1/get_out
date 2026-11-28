@@ -99,12 +99,8 @@ sprite_frames = SubResource("SpriteFrames_xiplf")
 animation = &"idle"
 autoplay = "idle"
 
-[node name="Timer" type="Timer" parent="." unique_id=1218713133]
-wait_time = 0.7
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1720400828]
 position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_lrn7f")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

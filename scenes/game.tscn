@@ -612,6 +612,9 @@ zoom = Vector2(4, 4)
 position_smoothing_enabled = true
 position_smoothing_speed = 3.0
 
+[node name="Timer" type="Timer" parent="king_player" unique_id=298951882]
+wait_time = 0.7
+
 [node name="bombs" type="Node" parent="." unique_id=2023391200]
 
 [node name="bomb" parent="bombs" unique_id=1282091265 instance=ExtResource("5_iywne")]
@@ -694,3 +697,4 @@ position = Vector2(965, 89)
 position = Vector2(928, 61)
 
 [connection signal="input_event" from="king_player" to="king_player" method="_on_input_event"]
+[connection signal="timeout" from="king_player/Timer" to="king_player" method="_on_timer_timeout"]

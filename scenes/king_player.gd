@@ -30,8 +30,16 @@ func _physics_process(delta):
 
 	velocity = v2.normalized() * speed
 	move_and_slide()
-	if Input.is_action_pressed("shot"):
+	if Input.is_action_just_pressed("shot"):
 		playeranimation.play("attack")
+	else :
+		if v2 != Vector2.ZERO and playeranimation.animation != "attack":
+			if playeranimation.animation != "run":
+				playeranimation.play("run")
+		if v2 == Vector2.ZERO and playeranimation.animation != "attack":
+			if playeranimation.animation != "idle":
+				playeranimation.play("idle")
+		
 	if v2 != Vector2.ZERO and playeranimation.animation != "attack":
 		if playeranimation.animation != "run":
 			playeranimation.play("run")

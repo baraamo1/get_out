@@ -7,7 +7,7 @@ extends CharacterBody2D
 @export var dir_range = 200
 @onready var ray_cast_2d_2: RayCast2D = $RayCast2D2
 @onready var ray_cast_2d: RayCast2D = $RayCast2D
-
+var is_attacking = false
 var player = null
 @onready var animated_pig: AnimatedSprite2D = $AnimatedSprite2D
 
@@ -16,7 +16,8 @@ func _physics_process(delta):
 	
 	if player == null:
 		return
-	
+	if is_attacking:
+		return
 	var distance = global_position.distance_to(player.global_position)
 	if distance < dir_range:
 		var direction = global_position.direction_to(player.global_position)
@@ -43,9 +44,11 @@ func _physics_process(delta):
 		var targer = ray_cast_2d_2.get_collider()
 		
 		if targer is CharacterBody2D:
-			king_player.die()
 			attack()
+			king_player.die()
 func attack():
+	if is_attacking:
+		return
+
+	is_attacking = true
 	animated_pig.play("attack")
-	ray_cast_2d_2.queue_free()
-	ray_cast_2d.queue_free()
